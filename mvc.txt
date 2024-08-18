@@ -1,0 +1,30 @@
+O padrão de arquitetura MVC (Model-View-Controller) é uma forma de organizar o desenvolvimento de software em três componentes principais, cada um com uma responsabilidade específica:
+
+-> Model (Modelo): Representa a lógica de negócios e os dados da aplicação. É responsável por acessar e manipular os
+    dados, geralmente através de interações com um banco de dados ou outro sistema de armazenamento.
+    O Modelo também notifica a View sobre as mudanças nos dados para que a interface do usuário possa ser atualizada.
+
+-> View (Visão): Refere-se à interface do usuário e à apresentação dos dados.
+    A View exibe as informações fornecidas pelo Model ao usuário e envia ao Controller as entradas do usuário,
+    como cliques em botões ou envio de formulários. A View não deve conter lógica de negócios,
+    apenas o código necessário para exibir os dados.
+
+-> Controller (Controlador): Atua como um intermediário entre a View e o Model.
+    O Controller recebe as entradas do usuário a partir da View, processa essas entradas
+    (por exemplo, validação), e chama os métodos apropriados no Model.
+    pós a atualização do Model, o Controller decide qual View deve ser exibida ao usuário.
+
+Fluxo de Trabalho no MVC:
+- O usuário interage com a View.
+- A View envia as informações ao Controller.
+- O Controller processa os dados e interage com o Model.
+- O Model atualiza os dados e notifica a View.
+- A View exibe os dados atualizados ao usuário.
+
+Vantagens do MVC:
+- Separação de responsabilidades: Cada componente tem uma função clara, o que facilita a manutenção e evolução do código.
+- Facilita a testabilidade: O isolamento da lógica de negócios no Model e a separação das interfaces gráficas na View tornam mais fácil testar cada parte da aplicação de forma independente.
+- Reutilização de código: A separação dos componentes permite reutilizar o código em diferentes partes da aplicação ou até mesmo em outras aplicações.
+
+MVC é amplamente utilizado em frameworks web, como Django (Python), Ruby on Rails (Ruby),
+ASP.NET (C#), e outros, sendo uma abordagem fundamental para a construção de aplicações robustas e escaláveis

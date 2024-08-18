@@ -1,0 +1,34 @@
+O padrão de arquitetura MVP (Model-View-Presenter) é uma variação do padrão MVC,
+muito utilizado no desenvolvimento de interfaces de usuário, especialmente em plataformas como
+Android e em aplicações de desktop. O MVP também separa a lógica de negócios da interface de usuário,
+mas o faz de uma maneira ligeiramente diferente:
+
+Model (Modelo): Assim como no MVC, o Model em MVP é responsável por gerenciar os dados e a lógica de negócios da
+aplicação. Ele lida com a recuperação, armazenamento e manipulação dos dados, geralmente através de interações
+com bancos de dados ou APIs.
+
+View (Visão): A View no MVP é responsável por exibir a interface do usuário e capturar as interações dos usuários,
+    como cliques ou entradas de dados. No entanto, ao contrário do MVC, a View no MVP não interage diretamente com o Model.
+        A comunicação entre a View e o Model é feita exclusivamente através do Presenter.
+
+Presenter (Apresentador): O Presenter é o elemento central no padrão MVP, atuando como intermediário entre a View e o Model.
+    Ele recebe as entradas do usuário a partir da View, processa essas entradas e interage com o Model
+    para atualizar ou recuperar dados. O Presenter então atualiza a View com as informações resultantes.
+    Diferente do Controller no MVC, o Presenter conhece a View, podendo chamá-la diretamente para atualizar a
+    interface do usuário.
+
+Fluxo de Trabalho no MVP:
+- O usuário interage com a View.
+- A View repassa as interações para o Presenter.
+- O Presenter processa as interações, interage com o Model e manipula os dados.
+- O Presenter atualiza a View com as informações processadas.
+
+Vantagens do MVP:
+-> Separação de responsabilidades: Como no MVC, o MVP promove a separação entre lógica de negócios e interface de usuário, facilitando a manutenção e evolução do código.
+-> Facilita a testabilidade: O Presenter pode ser testado de forma isolada, uma vez que ele não depende diretamente da interface gráfica.
+-> Flexibilidade na implementação da View: A View pode ser mais "burra", sem lógica de negócios, o que permite a criação de interfaces mais modulares e reutilizáveis.
+
+Comparação com MVC:
+-> Acesso à View: No MVC, o Controller não conhece diretamente a View, enquanto no MVP, o Presenter interage diretamente com a View, o que permite uma maior flexibilidade.
+Responsabilidade da View: No MVP, a View tem menos responsabilidade em relação ao MVC, sendo mais focada na apresentação e menos na interação com os dados.
+O padrão MVP é muito utilizado em aplicações onde a testabilidade é crucial e onde há uma necessidade de desacoplar fortemente a lógica de negócios da interface do usuário, como em aplicações móveis e de desktop.

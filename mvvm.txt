@@ -1,0 +1,40 @@
+O padrão de arquitetura MVVM (Model-View-ViewModel) é amplamente utilizado no desenvolvimento de aplicações com interfaces ricas,
+especialmente em plataformas como WPF, Xamarin e outras frameworks baseadas em .NET,
+assim como em desenvolvimento mobile com frameworks como o Android Architecture Components.
+O MVVM promove uma separação clara entre a interface do usuário e a lógica de negócios, facilitando a manutenção,
+a escalabilidade e a testabilidade do código.
+
+Aqui está uma descrição dos componentes principais:
+
+-> Model (Modelo): O Model no MVVM é semelhante ao dos padrões anteriores.
+    Ele representa a lógica de negócios e os dados da aplicação, sendo responsável por acessar e manipular dados,
+    geralmente a partir de bancos de dados, serviços web, ou outras fontes de dados.
+    O Model não conhece a View nem o ViewModel.
+
+-> View (Visão): A View é a interface do usuário, responsável por apresentar os dados e capturar as interações do usuário.
+    No MVVM, a View está geralmente ligada ao ViewModel através de um processo chamado "data binding"
+    (vinculação de dados). Isso permite que a View seja automaticamente atualizada quando os dados no ViewModel mudam,
+    sem precisar de código específico para manipular a interface.
+
+-> ViewModel (Modelo de Visão): O ViewModel é o intermediário entre o Model e a View.
+    Ele encapsula a lógica de apresentação, ou seja, processa os dados do Model para que possam ser exibidos de forma
+    adequada na View. O ViewModel expõe propriedades e comandos que a View pode vincular diretamente.
+    Assim como o Presenter no MVP, o ViewModel não deve ter referência direta à View, mantendo-se agnóstico em relação à
+    interface do usuário.
+
+Fluxo de Trabalho no MVVM:
+- O usuário interage com a View.
+- A View utiliza "data binding" para se conectar ao ViewModel.
+- O ViewModel processa os dados e interage com o Model.
+- O Model retorna os dados processados ao ViewModel.
+- As mudanças no ViewModel são refletidas automaticamente na View através do "data binding".
+
+Vantagens do MVVM:
+-> Data Binding: A capacidade de ligar diretamente os dados do ViewModel à View reduz a necessidade de código de "cola" para atualizar a interface do usuário, tornando o desenvolvimento mais eficiente.
+-> Separação clara de responsabilidades: O MVVM promove uma separação rígida entre a interface do usuário e a lógica de negócios, o que facilita a manutenção e evolução do código.
+-> Facilita a testabilidade: Como o ViewModel não depende diretamente da View, ele pode ser testado de forma isolada, o que melhora a qualidade do código.
+
+Comparação com MVC e MVP:
+- Complexidade: O MVVM pode ser mais complexo de implementar em comparação com MVC e MVP, especialmente devido ao uso de "data binding".
+Automação da UI: O MVVM automatiza a atualização da interface do usuário de maneira mais robusta e integrada que o MVC e o MVP, devido ao vínculo de dados entre a View e o ViewModel.
+O MVVM é especialmente útil em aplicações onde há uma separação clara entre a lógica de apresentação e a interface do usuário, e onde o "data binding" pode simplificar o desenvolvimento e a manutenção da aplicação
